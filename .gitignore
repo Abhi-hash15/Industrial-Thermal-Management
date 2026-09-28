@@ -1,0 +1,10 @@
+# Compiled executables
+thermal_controller
+thermal_monitor
+fan_driver_test
+
+# Runtime logs
+logs/*.csv
+
+# Build artifacts
+*.o
