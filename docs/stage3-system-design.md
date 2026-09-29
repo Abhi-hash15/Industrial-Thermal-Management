@@ -125,3 +125,59 @@ struct TemperatureData {
     float temperature;
     long timestamp;
 };
+---
+
+## 16. Stage 3 Progress Evidence
+
+The following activities were completed during Stage 3:
+
+- System architecture was designed and documented.
+- Major system components and their responsibilities were identified.
+- Required C++ data structures were defined.
+- Class Diagram was prepared.
+- Sequence Diagram was prepared.
+- State Machine Diagram was prepared.
+- Implementation plan for Stage 4 was defined.
+- Ubuntu Linux development environment was verified.
+- GNU g++ 13.3.0 was verified.
+- GNU Make 4.3 was verified.
+- Git 2.43.0 was verified.
+- Git repository was configured with a dedicated `stage3` branch.
+- Stage 3 documentation was committed to Git.
+- Stage 3 branch was successfully pushed to GitHub.
+
+### Git Information
+
+- **Branch:** `stage3`
+- **Commit:** `19518d7`
+- **Commit Message:** `Add Stage 3 system design and architecture`
+- **Remote Branch:** `origin/stage3`
+
+### Progress Evidence
+
+The following evidence was captured during Stage 3:
+
+1. Project repository containing Stage 1 and Stage 2 documentation.
+2. Ubuntu development environment with g++, Make and Git.
+3. Creation of the `stage3` Git branch.
+4. Stage 3 documentation commit.
+5. Successful push of the `stage3` branch to GitHub.
+
+---
+
+## 17. Roadmap for Stage 4
+
+Stage 4 will focus on the initial implementation and working prototype.
+
+Planned activities:
+
+1. Implement the Temperature Monitor.
+2. Implement the Fan Controller in C++.
+3. Implement the simulated fan driver.
+4. Implement PWM fan-speed control.
+5. Implement CSV logging.
+6. Integrate the major modules.
+7. Build the project using the Makefile.
+8. Run the initial working prototype.
+9. Demonstrate temperature-based fan-speed control.
+10. Record implementation issues and solutions.
