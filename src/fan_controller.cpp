@@ -33,7 +33,7 @@ bool loadConfig(const char* filename, ThermalConfig& config)
             else if (key == "HIGH_TEMP")
                 config.highTemp = number;
             else if (key == "CRITICAL_TEMP")
-                config.criticalTemp = number;
+               config.criticalTemp = number;
             else if (key == "EMERGENCY_TEMP")
                 config.emergencyTemp = number;
         }
@@ -78,9 +78,13 @@ const char* getThermalStatus(
     }
     else if (temperature >= config.criticalTemp)
     {
+        return "CRITICAL";
+    }
+    else if (temperature >= config.highTemp)
+    {
         return "HIGH";
     }
-    else if (temperature >= config.mediumTemp)
+    else if (temperature >= config.lowTemp)
     {
         return "NORMAL";
     }
