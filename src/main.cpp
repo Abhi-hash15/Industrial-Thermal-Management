@@ -8,9 +8,23 @@
 #include <chrono>
 #include <thread>
 #include <ctime>
+#include <csignal>
+
+volatile std::sig_atomic_t running = 1;
+
+void handleSignal(int signal)
+{
+    if (signal == SIGINT || signal == SIGTERM)
+    {
+        running = 0;
+    }
+}
 
 int main()
 {
+    std::signal(SIGINT, handleSignal);
+    std::signal(SIGTERM, handleSignal);
+
     ThermalConfig config{};
 
     if (!loadConfig("config/config.txt", config))
@@ -51,7 +65,7 @@ int main()
     std::cout << "Fan driver initialized.\n";
     std::cout << "System started. Press Ctrl+C to stop.\n\n";
 
-    for (int i = 0; i < 30; i++)
+    for (int i = 0; i < 30 && running; i++)
     {
         double temperature = getSimulatedTemperature();
 
@@ -61,7 +75,6 @@ int main()
         const char* status =
             getThermalStatus(temperature, config);
 
-        // Send calculated speed to fan driver
         fan.setFanSpeed(fanSpeed);
 
         std::time_t now = std::time(nullptr);
