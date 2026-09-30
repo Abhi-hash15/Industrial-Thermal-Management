@@ -203,10 +203,11 @@ Industrial-Thermal-Management/
 │   ├── main.cpp
 │   ├── thermal_monitor.cpp
 │   └── fan_controller.cpp
-│
+
 ├── tests/
-│   └── test_fan_controller.cpp
-│
+│   ├── test_fan_controller.cpp
+│   └── test_fan_driver.cpp│
+
 ├── Makefile
 └── README.md
 ```
@@ -221,7 +222,21 @@ Industrial-Thermal-Management/
 - **Testing:** C++ unit tests
 - **Hardware Interface:** Simulated PWM fan driver
 - **Data Storage:** CSV logging
+## 🐧 Linux Device Driver Concepts
 
+The project demonstrates Linux device-driver concepts through a modular user-space fan driver abstraction.
+
+The `driver/fan_driver.cpp` and `driver/fan_driver.h` modules represent the fan hardware interface and simulate PWM-based fan-speed control.
+
+The driver provides:
+- Fan driver initialization
+- PWM output simulation
+- Fan speed control from 0% to 100%
+- Input range validation and clamping
+- Driver shutdown
+- Hardware-interface abstraction
+
+This project uses a simulated user-space driver rather than a Linux kernel module, allowing the thermal-management architecture to be developed and tested safely in a Linux environment.
 ## 📚 Project Stages
 
 | Stage | Description |
