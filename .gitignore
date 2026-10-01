@@ -2,6 +2,9 @@
 thermal_controller
 thermal_monitor
 fan_driver_test
+thermal_controller_test
+thermal_simulator
+thermal_dashboard
 
 # Runtime logs
 logs/*.csv
